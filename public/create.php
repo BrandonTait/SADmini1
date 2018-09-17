@@ -44,6 +44,46 @@ if (isset($_POST['submit'])) {
   <?php endif; ?>
 
   <h2>Add a user</h2>
+<style>
+    .form-sec{width:100%; background: #90b3cc; padding:15px;
+        background: rgba(245, 243, 250, 0.65);padding: 15px;box-shadow: 0 0 4px #90b3cc;}
+</style>
+<div class="container">
+
+    <div class="form-sec">
+        <h4>Contact form</h4>
+
+        <form name="qryform" id="qryform" method="post" action="mail.php" onsubmit="return(validate());" novalidate="novalidate">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control" id="name" placeholder="Enter Email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label>Phone No.:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter Phone no." name="phone">
+            </div>
+            <div class="form-group">
+                <label>Subject:</label>
+                <input type="text" class="form-control" id="name" placeholder="Subject" name="subject">
+            </div>
+
+            <div class="form-group">
+                <label>Issues/query:</label>
+                <textarea name="issues" class="form-control" id="iq" placeholder="Enter your Issues/query"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+
+</div>
 
   <form method="post">
     <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
@@ -59,6 +99,8 @@ if (isset($_POST['submit'])) {
     <input type="text" name="location" id="location">
     <input type="submit" name="submit" value="Submit">
   </form>
+
+
 
   <a href="index.php">Back to home</a>
 
