@@ -93,9 +93,8 @@ try {
                 var fourthCol = rows[i].cells[3].textContent.toUpperCase();
                 var fifthCol = rows[i].cells[4].textContent.toUpperCase();
                 var sixthCol = rows[i].cells[5].textContent.toUpperCase();
-                var seventhCol = rows[i].cells[6].textContent.toUpperCase();
 
-                if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1 || fourthCol.indexOf(filter) > -1 || fifthCol.indexOf(filter) > -1 || sixthCol.indexOf(filter) > -1 || seventhCol.indexOf(filter) > -1) {
+                if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1 || fourthCol.indexOf(filter) > -1 || fifthCol.indexOf(filter) > -1 || sixthCol.indexOf(filter) > -1 ) {
                     rows[i].style.display = "";
                 } else {
                     rows[i].style.display = "none";
@@ -122,7 +121,6 @@ try {
       <th>Email Address</th>
       <th>Birthday</th>
       <th>Address</th>
-      <th>Zipcode</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -136,7 +134,6 @@ try {
       <td><?php echo escape($row["email"]); ?></td>
       <td><?php echo escape($row["birthdate"]); ?></td>
       <td><?php echo escape($row["address"]); ?></td>
-      <td><?php echo escape($row["zipcode"]); ?> </td>
       <td><a class ="btn btn-warning" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
       <td><a class="btn btn-danger" href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
     </tr>

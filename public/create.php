@@ -22,7 +22,6 @@ if (isset($_POST['submit'])) {
         "birthdate" =>$_POST['birthdate'],
         "password"=>$_POST['password'],
         "address"=>$_POST['address'],
-        "zipcode"=>$_POST['zipcode']
     );
 
     $sql = sprintf(
@@ -76,46 +75,11 @@ if (isset($_POST['submit'])) {
                 <label>Address:</label>
                 <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
             </div>
-            <div class="form-group">
-                <label>Zipcode:</label>
-                <input type="number" class="form-control" id="address" min="5" placeholder="Enter Zipcode" name="zipcode">
-            </div>
-
-<!--            <div class="form-group">-->
-<!--                <label>Phone No.:</label>-->
-<!--                <input type="text" class="form-control" id="phone" placeholder="Enter Phone no." name="phone">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <label>Subject:</label>-->
-<!--                <input type="text" class="form-control" id="name" placeholder="Subject" name="subject">-->
-<!--            </div>-->
-<!---->
-<!--            <div class="form-group">-->
-<!--                <label>Issues/query:</label>-->
-<!--                <textarea name="issues" class="form-control" id="iq" placeholder="Enter your Issues/query"></textarea>-->
-<!--            </div>-->
-
-
             <button type="submit" class="btn btn-primary" name="submit" value="Submit">Submit</button>
         </form>
     </div>
 
 
 </div>
-
-<!--  <form method="post">-->
-<!--    <input name="csrf" type="hidden" value="--><?php //echo escape($_SESSION['csrf']); ?><!--">-->
-<!--    <label for="firstname">First Name</label>-->
-<!--    <input type="text" name="firstname" id="firstname">-->
-<!--    <label for="lastname">Last Name</label>-->
-<!--    <input type="text" name="lastname" id="lastname">-->
-<!--    <label for="email">Email Address</label>-->
-<!--    <input type="text" name="email" id="email">-->
-<!--    <label for="age">Age</label>-->
-<!--    <input type="text" name="age" id="age">-->
-<!--    <label for="location">Location</label>-->
-<!--    <input type="text" name="location" id="location">-->
-<!--    <input type="submit" name="submit" value="Submit">-->
-<!--  </form>-->
 
 <?php require "templates/footer.php"; ?>
