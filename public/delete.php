@@ -6,6 +6,7 @@
 
 require "../config.php";
 require "../common.php";
+header('/custtable.php');
 
 if (isset($_GET["id"])) {
   try {

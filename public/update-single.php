@@ -20,9 +20,10 @@ if (isset($_POST['submit'])) {
       "firstname" => $_POST['firstname'],
       "lastname"  => $_POST['lastname'],
       "email"     => $_POST['email'],
-      "age"       => $_POST['age'],
-      "location"  => $_POST['location'],
-      "date"      => $_POST['date']
+      "birthdate"       => $_POST['birthdate'],
+        "password" => $_POST['password'],
+      "address"  => $_POST['address'],
+        "zipcode" => $_POST['zipcode']
     ];
 
     $sql = "UPDATE customers 
@@ -30,9 +31,10 @@ if (isset($_POST['submit'])) {
               firstname = :firstname, 
               lastname = :lastname, 
               email = :email, 
-              age = :age, 
-              location = :location, 
-              date = :date 
+              birthdate = :birthdate, 
+              password = :password,
+              address = :address, 
+              zipcode = :zipcode
             WHERE id = :id";
   
   $statement = $connection->prepare($sql);
@@ -68,17 +70,25 @@ if (isset($_GET['id'])) {
 	<blockquote><?php echo escape($_POST['firstname']); ?> successfully updated.</blockquote>
 <?php endif; ?>
 
-<h2>Edit a user</h2>
-
+<div class="container">
+<div class="form-sec">
 <form method="post">
+    <center><h2><span class="badge badge-primary">Edit Customer</span></h2></center>
     <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
     <?php foreach ($user as $key => $value) : ?>
-      <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
-	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
-    <?php endforeach; ?> 
-    <input type="submit" name="submit" value="Submit">
+        <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
+        <input type="text" class="form-control" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+    <?php endforeach; ?>
+    <br>
+    <button type="submit" class="btn btn-success" name="submit" value="Submit">Update Customer</button>
 </form>
+</div>
+</div>
+<br><br>
+<style>
+    .form-sec{width:100%; background: #90b3cc; padding:20px;
+        background: rgba(245, 243, 250, 0.65);padding: 20px;box-shadow: 0 0 4px #90b3cc;}
+</style>
 
-<a href="index.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>

@@ -49,7 +49,6 @@ if (isset($_POST['submit'])) {
 <style>
     .form-sec{width:100%; background: #90b3cc; padding:20px;
         background: rgba(245, 243, 250, 0.65);padding: 20px;box-shadow: 0 0 4px #90b3cc;}
-    .button{color: blue}
 </style>
 <div class="container">
     <div class="form-sec">

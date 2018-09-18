@@ -40,7 +40,7 @@ try {
 ?>
 <?php require "templates/header.php"; ?>
 
-    <center><h2><span class="badge badge-primary">All Customers</span></h2></center>
+
 
 <?php if ($success) echo $success; ?>
 <!-- Search Bar -->
@@ -77,8 +77,9 @@ try {
 
         #myTable tr.header, #myTable tr:hover {
             /* Add a grey background color to the table header and on hover */
-            background-color: #f1f1f1;
+            background-color: rgba(45, 125, 246, 0.5);
         }
+
     </style>
         <script>
         function filterTable(event) {
@@ -104,9 +105,13 @@ try {
 
         document.querySelector('#myInput').addEventListener('keyup', filterTable, false);
     </script>
+    <div class="container-fluid">
+
+            <center><h2><span class="badge badge-primary">All Customers</span></h2></center>
     <center><input type="text" id="myInput" onkeyup="filterTable(event)" placeholder="Search for anything.."></center>
 
 <!-- Search Bar -->
+
 <center>
 <table class = "table table-striped table-hover table-sm" id="myTable">
   <thead>
@@ -118,6 +123,8 @@ try {
       <th>Birthday</th>
       <th>Address</th>
       <th>Zipcode</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -130,11 +137,15 @@ try {
       <td><?php echo escape($row["birthdate"]); ?></td>
       <td><?php echo escape($row["address"]); ?></td>
       <td><?php echo escape($row["zipcode"]); ?> </td>
+      <td><a class ="btn btn-warning" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+      <td><a class="btn btn-danger" href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
     </tr>
   <?php endforeach; ?>
   </tbody>
 </table>
 </center>
+        </div>
+
 
 <a href="index.php">Back to home</a>
 
