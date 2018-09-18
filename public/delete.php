@@ -13,7 +13,7 @@ if (isset($_GET["id"])) {
   
     $id = $_GET["id"];
 
-    $sql = "DELETE FROM users WHERE id = :id";
+    $sql = "DELETE FROM customers WHERE id = :id";
 
     $statement = $connection->prepare($sql);
     $statement->bindValue(':id', $id);
@@ -28,7 +28,7 @@ if (isset($_GET["id"])) {
 try {
   $connection = new PDO($dsn, $username, $password, $options);
 
-  $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM customers";
 
   $statement = $connection->prepare($sql);
   $statement->execute();

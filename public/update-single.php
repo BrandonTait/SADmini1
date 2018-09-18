@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
       "date"      => $_POST['date']
     ];
 
-    $sql = "UPDATE users 
+    $sql = "UPDATE customers 
             SET id = :id, 
               firstname = :firstname, 
               lastname = :lastname, 
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
     $connection = new PDO($dsn, $username, $password, $options);
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM users WHERE id = :id";
+    $sql = "SELECT * FROM customers WHERE id = :id";
     $statement = $connection->prepare($sql);
     $statement->bindValue(':id', $id);
     $statement->execute();
