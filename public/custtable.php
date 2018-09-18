@@ -39,9 +39,8 @@ try {
 }
 ?>
 <?php require "templates/header.php"; ?>
-        
-<h2>All Customers</h2>
 
+    <center><h2><span class="badge badge-primary">All Customers</span></h2></center>
 
 <?php if ($success) echo $success; ?>
 <!-- Search Bar -->
@@ -82,28 +81,30 @@ try {
         }
     </style>
         <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
+        function filterTable(event) {
+            var filter = event.target.value.toUpperCase();
+            var rows = document.querySelector("#myTable tbody").rows;
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
+            for (var i = 0; i < rows.length; i++) {
+                var firstCol = rows[i].cells[0].textContent.toUpperCase();
+                var secondCol = rows[i].cells[1].textContent.toUpperCase();
+                var thirdCol = rows[i].cells[2].textContent.toUpperCase();
+                var fourthCol = rows[i].cells[3].textContent.toUpperCase();
+                var fifthCol = rows[i].cells[4].textContent.toUpperCase();
+                var sixthCol = rows[i].cells[5].textContent.toUpperCase();
+                var seventhCol = rows[i].cells[6].textContent.toUpperCase();
+
+                if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1 || fourthCol.indexOf(filter) > -1 || fifthCol.indexOf(filter) > -1 || sixthCol.indexOf(filter) > -1 || seventhCol.indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
                 }
             }
         }
+
+        document.querySelector('#myInput').addEventListener('keyup', filterTable, false);
     </script>
-    <center><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."></center>
+    <center><input type="text" id="myInput" onkeyup="filterTable(event)" placeholder="Search for anything.."></center>
 
 <!-- Search Bar -->
 <center>
