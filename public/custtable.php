@@ -135,7 +135,7 @@ try {
       <td><?php echo escape($row["birthdate"]); ?></td>
       <td><?php echo escape($row["address"]); ?></td>
       <td><a class ="btn btn-warning" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
-      <td><a class="btn btn-danger" href="delete.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
+      <td><a class="btn btn-danger" href="custtable.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
     </tr>
   <?php endforeach; ?>
   </tbody>

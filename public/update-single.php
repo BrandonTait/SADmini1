@@ -81,6 +81,9 @@ if (isset($_GET['id'])) {
     <?php endforeach; ?>
     <br>
     <button type="submit" class="btn btn-success" name="submit" value="Submit">Update Customer</button>
+    <br> <br>
+    <a class="btn btn-primary" href="/custtable.php" role="button">All Customers</a>
+
 </form>
 </div>
 </div>
