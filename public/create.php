@@ -19,8 +19,8 @@ if (isset($_POST['submit'])) {
       "firstname" => $_POST['firstname'],
       "lastname"  => $_POST['lastname'],
       "email"     => $_POST['email'],
-      "age"       => $_POST['age'],
-      "location"  => $_POST['location']
+//      "age"       => $_POST['age'],
+//      "location"  => $_POST['location']
     );
 
     $sql = sprintf(
@@ -47,58 +47,64 @@ if (isset($_POST['submit'])) {
 <style>
     .form-sec{width:100%; background: #90b3cc; padding:15px;
         background: rgba(245, 243, 250, 0.65);padding: 15px;box-shadow: 0 0 4px #90b3cc;}
+    .button{color: blue}
 </style>
 <div class="container">
 
     <div class="form-sec">
-        <h4>Contact form</h4>
+        <h4>Add new Customer</h4>
 
-        <form name="qryform" id="qryform" method="post" action="mail.php" onsubmit="return(validate());" novalidate="novalidate">
+        <form name="qryform" id="qryform" method="post">
+            <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
             <div class="form-group">
                 <label>Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                <input type="text" class="form-control" id="firstname" placeholder="Enter Name" name="firstname">
+            </div>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Enter Name" name="lastname">
             </div>
             <div class="form-group">
                 <label>Email:</label>
-                <input type="email" class="form-control" id="name" placeholder="Enter Email" name="email">
+                <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
             </div>
 
-            <div class="form-group">
-                <label>Phone No.:</label>
-                <input type="text" class="form-control" id="phone" placeholder="Enter Phone no." name="phone">
-            </div>
-            <div class="form-group">
-                <label>Subject:</label>
-                <input type="text" class="form-control" id="name" placeholder="Subject" name="subject">
-            </div>
+<!--            <div class="form-group">-->
+<!--                <label>Phone No.:</label>-->
+<!--                <input type="text" class="form-control" id="phone" placeholder="Enter Phone no." name="phone">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label>Subject:</label>-->
+<!--                <input type="text" class="form-control" id="name" placeholder="Subject" name="subject">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group">-->
+<!--                <label>Issues/query:</label>-->
+<!--                <textarea name="issues" class="form-control" id="iq" placeholder="Enter your Issues/query"></textarea>-->
+<!--            </div>-->
 
-            <div class="form-group">
-                <label>Issues/query:</label>
-                <textarea name="issues" class="form-control" id="iq" placeholder="Enter your Issues/query"></textarea>
-            </div>
 
-
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit" value="Submit">Submit</button>
         </form>
     </div>
 
 
 </div>
 
-  <form method="post">
-    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname">
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname">
-    <label for="email">Email Address</label>
-    <input type="text" name="email" id="email">
-    <label for="age">Age</label>
-    <input type="text" name="age" id="age">
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location">
-    <input type="submit" name="submit" value="Submit">
-  </form>
+<!--  <form method="post">-->
+<!--    <input name="csrf" type="hidden" value="--><?php //echo escape($_SESSION['csrf']); ?><!--">-->
+<!--    <label for="firstname">First Name</label>-->
+<!--    <input type="text" name="firstname" id="firstname">-->
+<!--    <label for="lastname">Last Name</label>-->
+<!--    <input type="text" name="lastname" id="lastname">-->
+<!--    <label for="email">Email Address</label>-->
+<!--    <input type="text" name="email" id="email">-->
+<!--    <label for="age">Age</label>-->
+<!--    <input type="text" name="age" id="age">-->
+<!--    <label for="location">Location</label>-->
+<!--    <input type="text" name="location" id="location">-->
+<!--    <input type="submit" name="submit" value="Submit">-->
+<!--  </form>-->
 
 
 
