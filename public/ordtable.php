@@ -13,7 +13,7 @@ if (isset($_GET["id"])) {
   
     $id = $_GET["id"];
 
-    $sql = "DELETE FROM customers WHERE id = :id";
+    $sql = "DELETE FROM orders WHERE ord_id = :ord_id";
 
     $statement = $connection->prepare($sql);
     $statement->bindValue(':id', $id);
@@ -28,7 +28,7 @@ if (isset($_GET["id"])) {
 try {
   $connection = new PDO($dsn, $username, $password, $options);
 
-  $sql = "SELECT * FROM customers";
+  $sql = "SELECT * FROM orders";
 
   $statement = $connection->prepare($sql);
   $statement->execute();
@@ -106,7 +106,7 @@ try {
     </script>
     <div class="container-fluid">
 
-            <center><h2><span class="badge badge-primary">All Customers</span></h2></center>
+            <center><h2><span class="badge badge-primary">All Orders</span></h2></center>
     <center><input type="text" id="myInput" onkeyup="filterTable(event)" placeholder="Search for anything.."></center>
 
 <!-- Search Bar -->
@@ -115,12 +115,12 @@ try {
 <table class = "table table-striped table-hover table-sm table-bordered" id="myTable">
   <thead>
     <tr>
-      <th>Customer ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Address</th>
-      <th>Birthday</th>
-      <th>Address</th>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Quantity</th>
+      <th>Balance</th>
+      <th>Ship Address</th>
+      <th>Type</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -128,14 +128,14 @@ try {
   <tbody>
   <?php foreach ($result as $row) : ?>
     <tr>
-      <td><?php echo escape($row["id"]); ?></td>
-      <td><?php echo escape($row["firstname"]); ?></td>
-      <td><?php echo escape($row["lastname"]); ?></td>
-      <td><?php echo escape($row["email"]); ?></td>
-      <td><?php echo escape($row["birthdate"]); ?></td>
-      <td><?php echo escape($row["address"]); ?></td>
-      <td><a class ="btn btn-warning" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
-      <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this customer?');" href="custtable.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
+      <td><?php echo escape($row["ord_id"]); ?></td>
+      <td><?php echo escape($row["p_id"]); ?></td>
+      <td><?php echo escape($row["ord_quant"]); ?></td>
+      <td><?php echo escape($row["ord_balance"]); ?></td>
+      <td><?php echo escape($row["ord_shipadd"]); ?></td>
+      <td><?php echo escape($row["ord_type"]); ?></td>
+      <td><a class ="btn btn-warning btn-sm" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+      <td><a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this order?');" href="custtable.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
     </tr>
   <?php endforeach; ?>
   </tbody>
