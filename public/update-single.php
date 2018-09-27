@@ -21,7 +21,6 @@ if (isset($_POST['submit'])) {
       "lastname"  => $_POST['lastname'],
       "email"     => $_POST['email'],
       "birthdate"       => $_POST['birthdate'],
-        "password" => $_POST['password'],
       "address"  => $_POST['address'],
     ];
 
@@ -31,7 +30,6 @@ if (isset($_POST['submit'])) {
               lastname = :lastname, 
               email = :email, 
               birthdate = :birthdate, 
-              password = :password,
               address = :address 
             WHERE id = :id";
   

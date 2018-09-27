@@ -6,7 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Simple Database App</title>
+	<title>Giardini Art Supply</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -93,7 +93,7 @@
 </script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/index.php">Ann+Bill Management</a>
+        <a class="navbar-brand" href="/index.php">Giardini Art Supply</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -107,7 +107,13 @@
                     <a class="nav-link" href="/custtable.php">View Customers</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/ordinput.php">New Order</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/ordtable.php">View Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/payprocc.php">Make Payment</a>
                 </li>
 <!--                <li class="nav-item dropdown">-->
 <!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->

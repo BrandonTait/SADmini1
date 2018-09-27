@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Delete a user
  */
 
 require "../config.php";
@@ -134,8 +133,8 @@ try {
       <td><?php echo escape($row["ord_balance"]); ?></td>
       <td><?php echo escape($row["ord_shipadd"]); ?></td>
       <td><?php echo escape($row["ord_type"]); ?></td>
-      <td><a class ="btn btn-warning btn-sm" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
-      <td><a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this order?');" href="custtable.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
+      <td><center><a class ="btn btn-warning" href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></center></td>
+      <td><center><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this order?');" href="custtable.php?id=<?php echo escape($row["id"]); ?>">Delete</a></center></td>
     </tr>
   <?php endforeach; ?>
   </tbody>
