@@ -101,19 +101,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/create.php">New Customer</a>
+                    <a class="nav-link" href="/public/create.php">New Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/custtable.php">View Customers</a>
+                    <a class="nav-link" href="/public/custtable.php">View Customers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/ordinput.php">New Order</a>
+                    <a class="nav-link" href="/public/ordinput.php">New Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/ordtable.php">View Orders</a>
+                    <a class="nav-link" href="/public/ordtable.php">View Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/payprocc.php">Make Payment</a>
+                    <a class="nav-link" href="/public/payprocc.php">Make Payment</a>
                 </li>
 <!--                <li class="nav-item dropdown">-->
 <!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
